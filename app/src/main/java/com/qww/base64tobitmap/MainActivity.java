@@ -37,8 +37,13 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void click1(View view) {
-        Bitmap bitmap = Base64Util.Base64ToBitMap(content);
-        binding.img.setImageBitmap(bitmap);
+        if (content == null) {
+            Toast.makeText(this, "字符串为空", Toast.LENGTH_SHORT).show();
+        }else {
+            Bitmap bitmap = Base64Util.Base64ToBitMap(content);
+            binding.img.setImageBitmap(bitmap);
+        }
+
     }
 
     /**
